@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/business-management-set-2-3/64/x-05-512.png" type="image/x-icon">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+    <title>Employees</title>
+</head>
+
+<body>
+    <div class="header text-center mt-5 text-white">
+        <br>
+        <br>
+        <h1 class="mt-4">
+            <span>E</span>
+            <span>m</span>
+            <span>p</span>
+            <span>l</span>
+            <span>o</span>
+            <span>y</span>
+            <span>e</span>
+            <span>e</span>
+            <span>s</span>
+            <span> </span>
+            <span>o</span>
+            <span>f</span>
+            <span></span>
+            <span>t</span>
+            <span>h</span>
+            <span>e</span>
+            <span></span>
+            <span>Y</span>
+            <span>e</span>
+            <span>a</span>
+            <span>r</span>
+        </h1>
+        <button type="submit" class="btn btn-info btn-lg rounded-circle  addBtn float-right mr-4" data-toggle="modal"data-target="#addModal" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;"><i
+                class="fa fa-user-plus text-white text-lg" aria-hidden="true"></i></button>
+    </div>
+    <br>
+    <div class="container mt-4">
+        <!-- <form class="mb-4"> -->
+
+        <!-- modal for addding an employee -->
+        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title ml-3" id="exampleModalLabel">New Employee</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col">
+                            <label for="Fullname">Fullname</label>
+                            <input type="text" required class="form-control fullname" placeholder="Enter Fullname">
+                        </div>
+                        <br>
+                        <div class="col">
+                            <label for="Fullname">Position</label>
+                            <input type="text" required class="form-control work" placeholder="Enter Position">
+
+                        </div>
+                        <br>
+                        <div class="col">
+                            <label for="Fullname">Email Address</label>
+                            <input type="email" required class="form-control email" placeholder="Enter Email">
+
+                        </div>
+                        <br>
+                        <div class="col">
+                            <label for="Fullname">Image</label>
+                            <input type="text" required class="form-control image" placeholder="Enter Image URL">
+                            <input type="hidden" class="userid">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary add actionBtn">Add Employee</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal for updating an employee information-->
+        <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title ml-3" id="exampleModalLabel">Update Information</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col">
+                            <label for="Fullname">Fullname</label>
+                            <input type="text" required class="form-control updatefullname" placeholder="Enter Fullname">
+                        </div>
+                        <br>
+                        <div class="col">
+                            <label for="Position">Position</label>
+                            <input type="text" required class="form-control updatework" placeholder="Enter Position">
+
+                        </div>
+                        <br>
+                        <div class="col">
+                            <label for="Email">Email Address</label>
+                            <input type="email" required class="form-control updateemail" placeholder="Enter Email">
+
+                        </div>
+                        <br>
+                        <div class="col">
+                            <label for="Image">Image</label>
+                            <input type="text" required class="form-control updateimage" placeholder="Enter Image URL">
+                            <input type="hidden" class="updateuserid">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary update actionBtn">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row data">
+
+        </div>
+        <!-- <div class="container-fluid">
+            
+         
+        <button type="submit" class="btn btn-info btn-lg rounded-circle  addBtn float-right" data-toggle="modal" data-target="#addModal" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;"><i class="fa fa-user-plus text-white text-lg" aria-hidden="true"></i></button>
+       </div> -->
+
+    </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
